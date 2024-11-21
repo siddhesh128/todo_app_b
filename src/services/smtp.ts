@@ -27,7 +27,7 @@ const transporter: Transporter = nodemailer.createTransport({
 const mailOptions: SendMailOptions = {
 	from: '"Sid" <MS_ymNWTZ@trial-pr9084z7p5egw63d.mlsender.net>', 
 	to: 'siddheshj039@gmail.com',
-	subject: 'Welcome! Your free trial is ready.', 
+	subject: 'Welcome! ', 
 	text: 'Hey there!',
 	html: `
     <p>Hey there!</p>
