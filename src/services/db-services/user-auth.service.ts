@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { REGISTER_MESSAGES, JWT_SECRET } from "../../constants/auth";
 import { UserAttributes } from "../../types/db-types";
-import { EmailSender } from "../email.service";
+import { EmailSender } from "../EmailSender";
 import { prepareEmail } from "../../utils/prepareEmail";
 
 export class UserAuthService {
