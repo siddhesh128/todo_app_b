@@ -15,7 +15,7 @@ export class UserAuthService {
 
   private static async sendVerificationEmail(email: string): Promise<void> {
     const token = this.generateVerificationToken(email);
-    const verificationLink = `${process.env.BACKEND_URL || 'http://localhost:5000'}/verify/${token}`;
+    const verificationLink = `${process.env.BACKEND_URL || 'https://todo-app-b-h20n.onrender.com'}/verify/${token}`;
     
     const emailContent = prepareEmail.verificationEmail(email, verificationLink);
     await this.emailSender.sendEmail(
