@@ -5,15 +5,19 @@ import db from "./db/connect-db";
 import todosRouter from "./router/todo.router";
 import userRouter from "./router/user-auth.router";
 import {runPrismaCommands} from '../prisma/prisma-setup';
-dotenv.config();
+import { emailTransporter } from './middleware/email.middleware';
 
+dotenv.config();
 runPrismaCommands();
 
 const app = express();
 
+// Initialize email transporter
+emailTransporter;
+
 app.use(cors());
 app.use(express.json());
-app.use(userRouter);  // Add /auth prefix here
+app.use(userRouter);
 app.use(todosRouter);
 
 db.then(() => {
